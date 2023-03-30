@@ -1,0 +1,3 @@
+D:\test\YourCity\bin\Release\net7.0-android\publish\com.companyname.yourcity-Signed.aab
+D:\test\YourCity\bin\Release\net7.0-android\publish\com.companyname.yourcity.aab
+D:\test\YourCity\bin\Release\net7.0-android\publish\com.companyname.yourcity-Signed.apk

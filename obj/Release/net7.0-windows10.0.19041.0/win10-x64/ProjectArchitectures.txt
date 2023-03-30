@@ -1,0 +1,1 @@
+E:\Проекты\андроид\YourCity\YourCity\YourCity.csproj;x64

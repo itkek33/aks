@@ -1,0 +1,1 @@
+D:\test\YourCity\YourCity.csproj;x64

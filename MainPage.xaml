@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourCity.MainPage"
+             xmlns:local="clr-namespace:YourCity">
+
+
+    <ScrollView BackgroundColor="Black">
+        <StackLayout Margin="20" BackgroundColor="Black">
+            <!--костыльный момент-->
+            <Label x:Name="MainLabelStreetsName"   Text="{Binding Source={x:Reference collectionView}, Path=SelectedItem.Streets_name, StringFormat='{0}'}" TextColor="Black" FontSize="1"></Label>
+            <Label x:Name="MainLabelCity_name" Text="{Binding Source={x:Reference collectionView}, Path=SelectedItem.City_name, StringFormat='{0}'}" TextColor="Black" FontSize="1"></Label>
+            <CollectionView ItemsLayout="VerticalGrid, 2" ItemsSource="{Binding Streets}" IsGrouped="True"  x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal"></VisualState>
+                        <VisualState Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Gray"></Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}" FontSize="40"  TextColor="White" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout >
+                            
+                            <Image Source="{Binding ImagePath}" HeightRequest="400" WidthRequest="300" ></Image> 
+                            <StackLayout >
+                        
+                                    <Label Text="{Binding Streets_name}" FontSize = "20"  TextColor = "White"  />
+                            </StackLayout>                            
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+             </CollectionView>        
+        </StackLayout>        
+    
+</ScrollView>
+</ContentPage>
